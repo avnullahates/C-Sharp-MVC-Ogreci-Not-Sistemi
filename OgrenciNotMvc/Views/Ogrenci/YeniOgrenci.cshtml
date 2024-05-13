@@ -1,0 +1,57 @@
+﻿@model OgrenciNotMvc.Models.EntityFramwork.TBLOGRENCILER
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <form method="post" class="form-group">
+
+        <div>
+            <label>Ogrenci Adi</label>
+            <input type="text" class="form-control" name="OGRAD" />
+
+        </div>
+
+        <div style="margin-top:10px;">
+            <label>Ogrenci Soyadi</label>
+            <input type="text" class="form-control" name="OGRSOYADI" />
+        </div>
+
+        <div style="margin-top:10px;">
+            <label>Ogrenci Fotograf</label>
+            <input type="text" class="form-control" name="OGRFOTOGRAF" />
+        </div>
+
+        <div style="margin-top:10px;">
+            <label>Ogrenci Cinsiyet</label>
+            <input type="text" class="form-control" name="OGRCINSIYET" />
+        </div>
+        <div style="margin-top:10px;">
+            <label>Ogrenci Kulup</label>
+            @Html.DropDownListFor(m => m.TBLKULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+
+
+
+
+        <div style="margin-top:10px;">
+            <button class="btn btn-primary">Ogrenci Ekle</button>
+        </div>
+    </form>
+</div>
+@*<div style="margin-top:10px;">
+        <label>Sehir Secimi</label>
+        @Html.DropDownList("Sehirler",
+       new[]
+       {
+           new SelectListItem(){Value="1",Text="Ankara"},
+           new SelectListItem(){Value="2",Text="Istanbul"},
+           new SelectListItem(){Value="3",Text="Elazig"},
+           new SelectListItem(){Value="4",Text="Bursa"}
+       }, "Sehir Seciniz", new { @class = "form-control" })
+    </div>*@
+
+
+
